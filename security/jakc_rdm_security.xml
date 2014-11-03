@@ -7,18 +7,18 @@
 	</record>
 
     <record model="res.groups" id="base.group_user">
-        <field name="comment">the user will be able to manage his own human resources stuff (leave request, timesheets, ...), if he is linked to an employee in the system.</field>
+        <field name="comment">Basic user.</field>
     </record>
 
     <record id="base.group_rdm_operator" model="res.groups">
         <field name="name">Operator</field>
         <field name="category_id" ref="base.module_rdm"/>
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
-        <field name="comment">the user will be able to create and update transaction data.</field>
+        <field name="comment">the user will be able to create and update redemption and point transaction.</field>
     </record>
     <record id="base.group_rdm_officer" model="res.groups">
         <field name="name">Officer</field>
-        <field name="comment">the user will have an access certain features on Redemption Module.</field>
+        <field name="comment">the user will be able as operator, manage parameters and have access to delete redemption and point transaction.</field>
         <field name="category_id" ref="base.module_rdm"/>
         <field name="implied_ids" eval="[(4, ref('base.group_rdm_operator'))]"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>

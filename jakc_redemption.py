@@ -64,6 +64,12 @@ class rdm_customer_interest(osv.osv):
     }    
 rdm_customer_interest()
 
+class rdm_customer_occupation(osv.osv):
+    _name = "rdm.customer.occupation"
+    _description = "Customer Occupation"
+    _columns = {
+        'name': fields.char('Name', size=100, required=True),
+    }
 
 class rdm_card_type(osv.osv):
     _name = "rdm.card.type"
@@ -74,13 +80,13 @@ class rdm_card_type(osv.osv):
 rdm_card_type()
 
 
-class rdm_tenant_type(osv.osv):
-    _name = "rdm.tenant.type"
-    _description = "Tenant Type"
+class rdm_tenant_category(osv.osv):
+    _name = "rdm.tenant.category"
+    _description = "Tenant Category"
     _columns = {        
         'name': fields.char('Name', size=100, required=True),            
     }    
-rdm_tenant_type()
+rdm_tenant_category()
 
 class rdm_tenant_grade(osv.osv):
     _name = "rdm.tenant.grade"
@@ -94,8 +100,7 @@ class rdm_bank(osv.osv):
     _name = "rdm.bank"
     _description = "Bank"
     _columns = {        
-        'name': fields.char('Name', size=100, required=True),     
-        'bank_card_ids': fields.one2many('rdm.bank.card','bank_id','Bank Card'),
+        'name': fields.char('Name', size=100, required=True),             
     }    
 rdm_bank()
 
@@ -106,6 +111,9 @@ class rdm_bank_card(osv.osv):
         'bank_id': fields.many2one('rdm.bank','Bank ID'),
         'card_type': fields.selection([('debit','Debit'),('silver','Silver'),('gold','Gold'),('titanium','Titanium'),('platinum','Platinum')],'Card Type', required=True),           
         'name': fields.char('Name', size=100, required=True),                    
+    }    
+    _defaults = {
+        'bank_id': lambda self, cr, uid, context: context.get('bank_id', False),
     }    
 rdm_bank_card()
 
@@ -132,3 +140,22 @@ class rdm_city(osv.osv):
         'name': fields.char('Name', size=100, required=True),            
     }    
 rdm_city()
+
+class rdm_age_segment(osv.osv):
+    _name = 'rdm.age.segment'
+    _description = 'Redemption Age Segment'
+    _columns = {
+        'name': fields.char('Name', size=200, readonly=True),
+        'start_age': fields.integer('Start Age', required=True),
+        'end_age': fields.integer('End Age', required=True),        
+    }    
+    
+    def create(self, cr, uid, values, context=None):
+        values.update({'name':str(values['start_age']) + " to " + str(values['end_age']) + " Years"})        
+        return super(rdm_age_segment,self).create(cr,uid,values,context=context)
+    
+    def write(self, cr, uid, ids, values, context=None):
+        values.update({'name':str(values['start_age']) + " to " + str(values['end_age']) + " Years"})        
+        return super(rdm_age_segment,self).write(cr, uid, ids, values,context=context)
+    
+rdm_age_segment()

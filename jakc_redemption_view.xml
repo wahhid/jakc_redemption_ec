@@ -8,10 +8,12 @@
             <field name="model">rdm.customer.type</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Customer Type">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Customer Type" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>	                		                	
+                	</sheet>  
                 </form>
             </field>
         </record>
@@ -34,10 +36,12 @@
             <field name="model">rdm.customer.ethnic</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Customer Ethnic">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Customer Ethnic" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -60,10 +64,12 @@
             <field name="model">rdm.customer.religion</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Customer Religion">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Customer Religion" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -86,10 +92,12 @@
             <field name="model">rdm.customer.gender</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Customer Gender">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Customer Gender" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -112,10 +120,12 @@
             <field name="model">rdm.customer.marital</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Customer Marital">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Customer Marital" version="7.0">
+                	<sheet>                
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -138,10 +148,12 @@
             <field name="model">rdm.customer.zone</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Customer Zone">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Customer Zone" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -164,10 +176,12 @@
             <field name="model">rdm.customer.education</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Customer Education">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Customer Education" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -190,10 +204,12 @@
             <field name="model">rdm.customer.interest</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Customer Interest">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Customer Interest" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -208,7 +224,38 @@
                 </tree>
             </field>
         </record>
-        
+
+         
+         
+        <!-- RDM/CUSTOMER OCCUPATION -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_occupation_form">
+            <field name="name">rdm.customer.occupation.form</field>
+            <field name="model">rdm.customer.occupation</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Occupation" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_occupation_tree">
+            <field name="name">rdm.customer.occupation.tree</field>
+            <field name="model">rdm.customer.occupation</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Occupation">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+          
+                    
         <!-- RDM/CARD TYPE -->
 		
         <record model="ir.ui.view" id="view_rdm_card_type_form">
@@ -216,10 +263,12 @@
             <field name="model">rdm.card.type</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Card Type">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Card Type" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                		
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -237,25 +286,27 @@
         
         <!-- RDM/TENANT TYPE -->
 		
-        <record model="ir.ui.view" id="view_rdm_tenant_type_form">
-            <field name="name">rdm.tenant.type.form</field>
-            <field name="model">rdm.tenant.type</field>						
+        <record model="ir.ui.view" id="view_rdm_tenant_category_form">
+            <field name="name">rdm.tenant.category.form</field>
+            <field name="model">rdm.tenant.category</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Tenant Type">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Tenant Category" version="7.0">  
+					<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>						
+					</sheet>                	
                 </form>
             </field>
         </record>
 		
-        <record model="ir.ui.view" id="view_rdm_tenant_type_tree">
-            <field name="name">rdm.tenant.type.tree</field>
-            <field name="model">rdm.tenant.type</field>			
+        <record model="ir.ui.view" id="view_rdm_tenant_category_tree">
+            <field name="name">rdm.tenant.category.tree</field>
+            <field name="model">rdm.tenant.category</field>			
             <field name="type">tree</field>						
             <field name="arch" type="xml">
-                <tree string="Tenant Type">
+                <tree string="Tenant Category">
                     <field name="name"/>		
                 </tree>
             </field>
@@ -268,10 +319,12 @@
             <field name="model">rdm.tenant.grade</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Tenant Grade">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Tenant Grade" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -294,20 +347,12 @@
             <field name="model">rdm.bank</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Bank" version="7.0">  
-                    <group colspan="4">                            
-                        <field name="name"/>                            
-                    </group>
-                    <notebook>
-                        <page string="Card">
-                            <field name="bank_card_ids" widget="one2many_list" nolabel="1" context="{'bank_id': active_id}">
-                                <tree>
-                                    <field name="name"/>
-                                    <field name="card_type"/>
-                                </tree>
-                            </field>
-                        </page>
-                    </notebook>
+                <form string="Bank" version="7.0">
+                	<sheet>
+	                    <group colspan="4">                            
+	                        <field name="name"/>                            
+	                    </group>	                            		          
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -330,10 +375,12 @@
             <field name="model">rdm.tenant.title</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Tenant Title">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Tenant Title" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -356,10 +403,12 @@
             <field name="model">rdm.province</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="Province">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="Province" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -382,10 +431,12 @@
             <field name="model">rdm.city</field>						
             <field name="type">form</field>						
             <field name="arch" type="xml">
-                <form string="City">  
-                    <group>                            
-                        <field name="name"/>                            
-                    </group>
+                <form string="City" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
                 </form>
             </field>
         </record>
@@ -400,7 +451,40 @@
                 </tree>
             </field>
         </record>
-                                
+        
+
+		<!-- RDM/AGE SEGMENT -->
+		
+        <record model="ir.ui.view" id="view_rdm_age_segment_form">
+            <field name="name">rdm.age.segment.form</field>
+            <field name="model">rdm.age.segment</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Age Segment" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                        <field name="start_age"/>                            
+	                        <field name="end_age"/>                            
+	                    </group>                		
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_age_segment_tree">
+            <field name="name">rdm.age.segment.tree</field>
+            <field name="model">rdm.age.segment</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Age Segment">
+                    <field name="name"/>
+                    <field name="start_age"/>                            
+                    <field name="end_age"/>                            		
+                </tree>
+            </field>
+        </record>
+                                                
         <!-- RDM/ACTION -->
         <!-- CUSTOMER TYPE -->
 	<record model="ir.actions.act_window" id="action_rdm_customer_type">
@@ -434,79 +518,92 @@
         </record>		
         
         <!-- CUSTOMER ZONE -->
-	<record model="ir.actions.act_window" id="action_rdm_customer_zone">
+		<record model="ir.actions.act_window" id="action_rdm_customer_zone">
             <field name="name">Customer Zone</field>
             <field name="res_model">rdm.customer.zone</field>
             <field name="view_mode">tree,form</field>
         </record>		
         <!-- CUSTOMER EDUCATION -->
-	<record model="ir.actions.act_window" id="action_rdm_customer_education">
+		<record model="ir.actions.act_window" id="action_rdm_customer_education">
             <field name="name">Customer Education</field>
             <field name="res_model">rdm.customer.education</field>
             <field name="view_mode">tree,form</field>
         </record>		
         <!-- CUSTOMER INTEREST -->
-	<record model="ir.actions.act_window" id="action_rdm_customer_interest">
+		<record model="ir.actions.act_window" id="action_rdm_customer_interest">
             <field name="name">Customer Interest</field>
             <field name="res_model">rdm.customer.interest</field>
             <field name="view_mode">tree,form</field>
         </record>		
         <!-- CUSTOMER INTEREST -->
-	<record model="ir.actions.act_window" id="action_rdm_customer_gender">
+		<record model="ir.actions.act_window" id="action_rdm_customer_gender">
             <field name="name">Customer Gender</field>
             <field name="res_model">rdm.customer.gender</field>
             <field name="view_mode">tree,form</field>
         </record>		        
         <!-- CUSTOMER ZONE -->
-	<record model="ir.actions.act_window" id="action_rdm_customer_zone">
+		<record model="ir.actions.act_window" id="action_rdm_customer_zone">
             <field name="name">Customer Zone</field>
             <field name="res_model">rdm.customer.zone</field>
             <field name="view_mode">tree,form</field>
         </record>	
+        <!-- CUSTOMER OCCUPATION -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_occupation">
+            <field name="name">Customer Occupation</field>
+            <field name="res_model">rdm.customer.occupation</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+                
         <!-- CARD TYPE -->
-	<record model="ir.actions.act_window" id="action_rdm_card_type">
+		<record model="ir.actions.act_window" id="action_rdm_card_type">
             <field name="name">Card Type</field>
             <field name="res_model">rdm.card.type</field>
             <field name="view_mode">tree,form</field>
         </record>	
         <!-- TENANT TYPE -->
-	<record model="ir.actions.act_window" id="action_rdm_tenant_type">
+		<record model="ir.actions.act_window" id="action_rdm_tenant_category">
             <field name="name">Tenant Type</field>
-            <field name="res_model">rdm.tenant.type</field>
+            <field name="res_model">rdm.tenant.category</field>
             <field name="view_mode">tree,form</field>
         </record>	
         <!-- TENANT TYPE -->
-	<record model="ir.actions.act_window" id="action_rdm_tenant_grade">
+		<record model="ir.actions.act_window" id="action_rdm_tenant_grade">
             <field name="name">Tenant Grade</field>
             <field name="res_model">rdm.tenant.grade</field>
             <field name="view_mode">tree,form</field>
         </record>	
         <!-- BANK -->
-	<record model="ir.actions.act_window" id="action_rdm_bank">
+		<record model="ir.actions.act_window" id="action_rdm_bank">
             <field name="name">Bank</field>
             <field name="res_model">rdm.bank</field>
             <field name="view_mode">tree,form</field>
         </record>	
         <!-- TENANT TITLE -->
-	<record model="ir.actions.act_window" id="action_rdm_tenant_title">
+		<record model="ir.actions.act_window" id="action_rdm_tenant_title">
             <field name="name">Tenant Title</field>
             <field name="res_model">rdm.tenant.title</field>
             <field name="view_mode">tree,form</field>
         </record>	
         <!-- PROVINCE -->
-	<record model="ir.actions.act_window" id="action_rdm_province">
+		<record model="ir.actions.act_window" id="action_rdm_province">
             <field name="name">Province</field>
             <field name="res_model">rdm.province</field>
             <field name="view_mode">tree,form</field>
         </record>	
         <!-- CITY -->
-	<record model="ir.actions.act_window" id="action_rdm_city">
+		<record model="ir.actions.act_window" id="action_rdm_city">
             <field name="name">City</field>
             <field name="res_model">rdm.city</field>
             <field name="view_mode">tree,form</field>
         </record>	
 
-
+        
+        <!-- AGE SEGMENT -->
+		<record model="ir.actions.act_window" id="action_rdm_age_segment">
+            <field name="name">Age Segment</field>
+            <field name="res_model">rdm.age.segment</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
                                                                                                                                                                                                                                                                                         	
     </data>                
 </openerp>
