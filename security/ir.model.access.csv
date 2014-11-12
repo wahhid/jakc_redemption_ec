@@ -1,5 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_rdm_customer_type_manager,rdm.customer.type.manager,model_rdm_customer_type,base.group_rdm_manager,1,1,1,1
+access_rdm_customer_type_officer,rdm.customer.type.officer,model_rdm_customer_type,base.group_rdm_officer,1,1,1,0
 access_rdm_customer_type_operator,rdm.customer.type.operator,model_rdm_customer_type,base.group_rdm_operator,1,0,0,0
 access_rdm_customer_ethnic_manager,rdm.customer.ethnic.manager,model_rdm_customer_ethnic,base.group_rdm_manager,1,1,1,1
 access_rdm_customer_ethnic_operator,rdm.customer.ethnic.operator,model_rdm_customer_ethnic,base.group_rdm_operator,1,0,0,0

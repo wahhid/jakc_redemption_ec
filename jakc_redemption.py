@@ -100,7 +100,8 @@ class rdm_bank(osv.osv):
     _name = "rdm.bank"
     _description = "Bank"
     _columns = {        
-        'name': fields.char('Name', size=100, required=True),             
+        'name': fields.char('Name', size=100, required=True),        
+        'bank_card_ids': fields.one2many('rdm.bank.card','bank_id','Bank Card'),     
     }    
 rdm_bank()
 
