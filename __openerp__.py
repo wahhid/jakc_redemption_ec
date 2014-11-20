@@ -1,6 +1,6 @@
 {
     'name' : 'Redemption and Point Management',
-    'version' : '1.0',
+    'version' : '2.0',
     'author' : 'JakC',
     'category' : 'Generic Modules/Redemption And Point Management',
     'depends' : ['base_setup','base'],
