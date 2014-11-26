@@ -10,6 +10,8 @@
         'security/ir.model.access.csv',             
         'jakc_redemption_view.xml',
         'jakc_redemption_menu.xml',        
+        'jakc_redemption_config_view.xml',
+        'jakc_redemption_config_menu.xml',                
     ],
     'installable': True,
     'auto_install': False,
