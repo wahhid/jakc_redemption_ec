@@ -20,6 +20,10 @@ class rdm_config(osv.osv):
         'pop3_server': fields.char('POP3 Server', size=50),
         'pop3_user': fields.char('POP3 User', size=50),
         'pop3_password': fields.char('POP3 Password', size=50),
+        'report_server': fields.char('Report Server', size=50),
+        'report_server_port': fields.char('Report Server Port', size=50),
+        'report_user': fields.char('Report User', size=50),
+        'report_password': fields.char('Report Password', size=50),
         'state': fields.boolean('Status'),
     }
     
@@ -40,6 +44,10 @@ class rdm_config_settings(osv.osv_memory):
         'pop3_server': fields.char('POP3 Server', size=50),
         'pop3_user': fields.char('POP3 User', size=50),
         'pop3_password': fields.char('POP3 Password', size=50),
+        'report_server': fields.char('Report Server', size=50),
+        'report_server_port': fields.char('Report Server Port', size=50),
+        'report_user': fields.char('Report User', size=50),
+        'report_password': fields.char('Report Password', size=50),        
     }
 
     def _get_config(self, cr, uid, context=None):
@@ -118,24 +126,69 @@ class rdm_config_settings(osv.osv_memory):
         pop3_user = setting.pop3_user
         self.pool.get('rdm.config').write(cr, uid, [config.id], {'pop3_user': pop3_user})
         
-    def get_default_pop3_password(self, cr, uid, fields, context=None):
+    def get_default_report_server(self, cr, uid, fields, context=None):
         config = self._get_config(cr, uid, context)
         if config:
-            pop3_password = config.pop3_password
+            report_server = config.report_server
         else: 
             data = {}
             result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
-            pop3_password = False
-        return {'pop3_password': pop3_password}
+            report_server = None
+        return {'report_server': report_server}
 
-
-    def set_default_pop3_password(self, cr, uid, ids, context=None):
+    def set_default_report_server(self, cr, uid, ids, context=None):
         config = self._get_config(cr, uid, context)
         setting = self.browse(cr, uid, ids[0], context)
-        pop3_password = setting.pop3_password
-        self.pool.get('rdm.config').write(cr, uid, [config.id], {'pop3_password': pop3_password})
+        report_server = setting.report_server
+        self.pool.get('rdm.config').write(cr, uid, [config.id], {'report_server': report_server})
+
+
+    def get_default_report_server_port(self, cr, uid, fields, context=None):
+        config = self._get_config(cr, uid, context)
+        if config:
+            report_server_port = config.report_server_port
+        else: 
+            data = {}
+            result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
+            report_server_port = None
+        return {'report_server_port': report_server_port}
+
+    def set_default_report_server_port(self, cr, uid, ids, context=None):
+        config = self._get_config(cr, uid, context)
+        setting = self.browse(cr, uid, ids[0], context)
+        report_server_port = setting.report_server_port
+        self.pool.get('rdm.config').write(cr, uid, [config.id], {'report_server_port': report_server_port})
+
         
+    def get_default_report_user(self, cr, uid, fields, context=None):
+        config = self._get_config(cr, uid, context)
+        if config:
+            report_user = config.report_user
+        else: 
+            data = {}
+            result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
+            report_user = None
+        return {'report_user': report_user}
+
+    def set_default_report_user(self, cr, uid, ids, context=None):
+        config = self._get_config(cr, uid, context)
+        setting = self.browse(cr, uid, ids[0], context)
+        report_user = setting.report_user
+        self.pool.get('rdm.config').write(cr, uid, [config.id], {'report_user': report_user})
     
-    
-        
+    def get_default_report_password(self, cr, uid, fields, context=None):
+        config = self._get_config(cr, uid, context)
+        if config:
+            report_password = config.report_password
+        else: 
+            data = {}
+            result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
+            report_password = None
+        return {'report_password': report_password}
+
+    def set_default_report_password(self, cr, uid, ids, context=None):
+        config = self._get_config(cr, uid, context)
+        setting = self.browse(cr, uid, ids[0], context)
+        report_password = setting.report_password
+        self.pool.get('rdm.config').write(cr, uid, [config.id], {'report_password': report_password})    
      

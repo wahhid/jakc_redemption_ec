@@ -12,7 +12,7 @@
 	                    <button string="Cancel" type="object" name="cancel" class="oe_link"/>
 	                </header>
 	                 <div name="rdm.settings">
-                        <separator string="Redemption Configuration"/>
+                        <separator string="Email Configuration"/>
 	     				<group name="Redemption">
 	     					<group>
 	     						<field name="enable_email"/>
@@ -21,7 +21,16 @@
 	     						<field name="pop3_user" attrs="{'invisible':[('pop3_download','=',False)]}"/>
 	     						<field name="pop3_password" attrs="{'invisible':[('pop3_download','=',False)]}"/>
 	     					</group>
-	     				</group>    
+	     				</group>
+	     				<separator string="Report Configuration"/>
+	     				<group name="Redemption">
+	     					<group>
+	     						<field name="report_server"/>
+	     						<field name="report_server_port"/>
+	     						<field name="report_user"/>
+	     						<field name="report_password"/>
+	     					</group>
+	     				</group>       
 	     			</div>	       
 	            </form>
 	        </field>
