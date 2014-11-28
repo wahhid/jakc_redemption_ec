@@ -7,7 +7,7 @@ class rdm_config(osv.osv):
     _name = 'rdm.config'
     _description = 'Redemption Config'
     
-    def get_redemption_config(self, cr, uid, context=None):
+    def get_config(self, cr, uid, context=None):
         ids = self.search(cr, uid, [('state','=', True),], context=context)
         if ids:
             return self.browse(cr, uid, uid, context=context)
