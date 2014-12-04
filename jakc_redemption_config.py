@@ -24,6 +24,8 @@ class rdm_config(osv.osv):
         'report_server_port': fields.char('Report Server Port', size=50),
         'report_user': fields.char('Report User', size=50),
         'report_password': fields.char('Report Password', size=50),
+        'trans_delete_allowed': fields.boolean('Allow Delete Transaction'),
+        'trans_delete_approver': fields.integer('hr.employee','Delete Transaction Approver'),
         'state': fields.boolean('Status'),
     }
     
@@ -48,6 +50,8 @@ class rdm_config_settings(osv.osv_memory):
         'report_server_port': fields.char('Report Server Port', size=50),
         'report_user': fields.char('Report User', size=50),
         'report_password': fields.char('Report Password', size=50),        
+        'trans_delete_allowed': fields.boolean('Allow Delete Transaction'),
+        'trans_delete_approver': fields.integer('hr.employee','Delete Transaction Approver'),
     }
 
     def _get_config(self, cr, uid, context=None):
@@ -191,4 +195,36 @@ class rdm_config_settings(osv.osv_memory):
         setting = self.browse(cr, uid, ids[0], context)
         report_password = setting.report_password
         self.pool.get('rdm.config').write(cr, uid, [config.id], {'report_password': report_password})    
+     
+    def get_default_trans_delete_allowed(self, cr, uid, fields, context=None):
+        config = self._get_config(cr, uid, context)
+        if config:
+            trans_delete_allowed = config.trans_delete_allowed
+        else: 
+            data = {}
+            result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
+            trans_delete_allowed = False
+        return {'trans_delete_allowed': trans_delete_allowed}
+
+    def set_default_trans_delete_allowed(self, cr, uid, ids, context=None):
+        config = self._get_config(cr, uid, context)
+        setting = self.browse(cr, uid, ids[0], context)
+        trans_delete_allowed = setting.trans_delete_allowed
+        self.pool.get('rdm.config').write(cr, uid, [config.id], {'trans_delete_allowed': trans_delete_allowed})  
+        
+    def get_default_trans_delete_approver(self, cr, uid, fields, context=None):
+        config = self._get_config(cr, uid, context)
+        if config:
+            trans_delete_approver = config.trans_delete_approver
+        else: 
+            data = {}
+            result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
+            trans_delete_approver = None
+        return {'trans_delete_approver': trans_delete_approver}
+
+    def set_default_trans_delete_approver(self, cr, uid, ids, context=None):
+        config = self._get_config(cr, uid, context)
+        setting = self.browse(cr, uid, ids[0], context)
+        trans_delete_approver = setting.trans_delete_approver
+        self.pool.get('rdm.config').write(cr, uid, [config.id], {'trans_delete_approver': trans_delete_approver})   
      

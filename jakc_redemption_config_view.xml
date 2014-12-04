@@ -31,6 +31,13 @@
 	     						<field name="report_password"/>
 	     					</group>
 	     				</group>       
+	  					<separator string="Transaction Configuration"/>
+	     				<group name="Redemption">
+	     					<group>
+	     						<field name="trans_delete_allowed"/>
+	     						<field name="trans_delete_approver"/>
+	     					</group>
+	     				</group>    
 	     			</div>	       
 	            </form>
 	        </field>
