@@ -31,7 +31,6 @@
         <menuitem id="rdm_tenant_grade_menu" name="Grade" parent="rdm_general_tenant_menu"  action="action_rdm_tenant_grade" groups="base.group_rdm_manager" sequence="2"/>
         <menuitem id="rdm_tenant_title_menu" name="Title" parent="rdm_general_tenant_menu"  action="action_rdm_tenant_title" groups="base.group_rdm_manager" sequence="3"/>
         <menuitem id="rdm_bank_menu" name="Bank" parent="rdm_general_bank_menu"  action="action_rdm_bank" groups="base.group_rdm_manager" sequence="1"/>
- 		
  		       
         <!-- AYC -->
         <menuitem id="rdm_card_type_menu" name="Card Type" parent="rdm_general_ayc_menu"  action="action_rdm_card_type" groups="base.group_rdm_manager" sequence="1"/>                
