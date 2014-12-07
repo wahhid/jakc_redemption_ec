@@ -12,10 +12,15 @@
 	                    <button string="Cancel" type="object" name="cancel" class="oe_link"/>
 	                </header>
 	                 <div name="rdm.settings">
-                        <separator string="Email Configuration"/>
+	                    <separator string="General Configuration"/>
 	     				<group name="Redemption">
 	     					<group>
 	     					    <field name="rdm_server"/>
+	     					</group>
+	     				</group>
+                        <separator string="Email Configuration"/>
+	     				<group name="Redemption">
+	     					<group>
 	     						<field name="enable_email"/>
 	     						<field name="pop3_download"/>
 	     						<field name="pop3_server" attrs="{'invisible':[('pop3_download','=',False)]}"/>

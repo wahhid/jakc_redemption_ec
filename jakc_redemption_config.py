@@ -26,7 +26,7 @@ class rdm_config(osv.osv):
         'report_user': fields.char('Report User', size=50),
         'report_password': fields.char('Report Password', size=50),
         'trans_delete_allowed': fields.boolean('Allow Delete Transaction'),
-        'trans_delete_approver': fields.integer('Delete Transaction Approver'),
+        'trans_delete_approver': fields.many2one('hr.employee','Delete Transaction Approver'),
         'state': fields.boolean('Status'),
     }
     
