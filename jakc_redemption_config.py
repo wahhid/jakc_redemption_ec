@@ -15,6 +15,7 @@ class rdm_config(osv.osv):
             return None
             
     _columns = {
+        'rdm_server': fields.char('RDM Server', size=50),        
         'enable_email' : fields.boolean('Enable Email'),
         'pop3_download': fields.boolean('POP3 Download'),
         'pop3_server': fields.char('POP3 Server', size=50),
@@ -30,6 +31,7 @@ class rdm_config(osv.osv):
     }
     
     _defaults = {
+        'rdm_server': lambda *a:'localhost',         
         'enable_email': lambda *a: False,
         'pop3_download': lambda *a: False,
         'state': lambda *a: True,
@@ -61,6 +63,24 @@ class rdm_config_settings(osv.osv_memory):
         else:
             config = None
         return config
+
+    def get_default_rdm_server(self, cr, uid, fields, context=None):
+        config = self._get_config(cr, uid, context)
+        if config:
+            rdm_server = config.rdm_server 
+        else: 
+            data = {}
+            result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
+            rdm_server = None
+        return {'rdm_server': rdm_server}
+
+
+    def set_default_rdm_server(self, cr, uid, ids, context=None):
+        config = self._get_config(cr, uid, context)
+        setting = self.browse(cr, uid, ids[0], context)
+        rdm_server = setting.rdm_server
+        self.pool.get('rdm.config').write(cr, uid, [config.id], {'rdm_server': rdm_server})
+
     
     def get_default_enable_email(self, cr, uid, fields, context=None):
         config = self._get_config(cr, uid, context)
