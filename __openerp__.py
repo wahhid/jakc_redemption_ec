@@ -3,7 +3,7 @@
     'version' : '2.0',
     'author' : 'JakC',
     'category' : 'Generic Modules/Redemption And Point Management',
-    'depends' : ['base_setup','base','hr_employee'],
+    'depends' : ['base_setup','base','hr'],
     'init_xml' : [],
     'data' : [			
         'security/jakc_rdm_security.xml',
