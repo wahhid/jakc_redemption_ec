@@ -43,6 +43,7 @@ class rdm_config_settings(osv.osv_memory):
     _name = 'rdm.config.settings'
     _inherit = 'res.config.settings'
     _columns = {
+        'rdm_server': fields.char('RDM Server', size=50),
         'enable_email' : fields.boolean('Enable Email'),
         'pop3_download': fields.boolean('POP3 Download'),
         'pop3_server': fields.char('POP3 Server', size=50),
