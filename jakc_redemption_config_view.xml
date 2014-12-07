@@ -15,6 +15,7 @@
                         <separator string="Email Configuration"/>
 	     				<group name="Redemption">
 	     					<group>
+	     					    <field name="rdm_server"/>
 	     						<field name="enable_email"/>
 	     						<field name="pop3_download"/>
 	     						<field name="pop3_server" attrs="{'invisible':[('pop3_download','=',False)]}"/>
