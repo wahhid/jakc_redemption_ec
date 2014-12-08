@@ -21,6 +21,7 @@ class rdm_config(osv.osv):
         'pop3_server': fields.char('POP3 Server', size=50),
         'pop3_user': fields.char('POP3 User', size=50),
         'pop3_password': fields.char('POP3 Password', size=50),
+        'email_from': fields.char('Email From', size=50),
         'report_server': fields.char('Report Server', size=50),
         'report_server_port': fields.char('Report Server Port', size=50),
         'report_user': fields.char('Report User', size=50),
@@ -49,6 +50,7 @@ class rdm_config_settings(osv.osv_memory):
         'pop3_server': fields.char('POP3 Server', size=50),
         'pop3_user': fields.char('POP3 User', size=50),
         'pop3_password': fields.char('POP3 Password', size=50),
+        'email_from': fields.char('Email From', size=50),
         'report_server': fields.char('Report Server', size=50),
         'report_server_port': fields.char('Report Server Port', size=50),
         'report_user': fields.char('Report User', size=50),
@@ -141,15 +143,47 @@ class rdm_config_settings(osv.osv_memory):
         else: 
             data = {}
             result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
-            pop3_user = False
+            pop3_user = None
         return {'pop3_user': pop3_user}
-
 
     def set_default_pop3_user(self, cr, uid, ids, context=None):
         config = self._get_config(cr, uid, context)
         setting = self.browse(cr, uid, ids[0], context)
         pop3_user = setting.pop3_user
         self.pool.get('rdm.config').write(cr, uid, [config.id], {'pop3_user': pop3_user})
+
+    def get_default_pop3_password(self, cr, uid, fields, context=None):
+        config = self._get_config(cr, uid, context)
+        if config:
+            pop3_password = config.pop3_password
+        else: 
+            data = {}
+            result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
+            pop3_password = None
+        return {'pop3_password': pop3_password}
+
+    def set_default_pop3_password(self, cr, uid, ids, context=None):
+        config = self._get_config(cr, uid, context)
+        setting = self.browse(cr, uid, ids[0], context)
+        pop3_password = setting.pop3_password
+        self.pool.get('rdm.config').write(cr, uid, [config.id], {'pop3_password': pop3_password})
+
+    def get_default_email_from(self, cr, uid, fields, context=None):
+        config = self._get_config(cr, uid, context)
+        if config:
+            email_from = config.email_from
+        else: 
+            data = {}
+            result_id = self.pool.get('rdm.config').create(cr, uid, data, context=context)
+            email_from = False
+        return {'email_from': email_from}
+
+    def set_default_email_from(self, cr, uid, ids, context=None):
+        config = self._get_config(cr, uid, context)
+        setting = self.browse(cr, uid, ids[0], context)
+        email_from = setting.email_from
+        self.pool.get('rdm.config').write(cr, uid, [config.id], {'email_from': email_from})
+
         
     def get_default_report_server(self, cr, uid, fields, context=None):
         config = self._get_config(cr, uid, context)

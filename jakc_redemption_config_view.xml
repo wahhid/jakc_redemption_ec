@@ -22,6 +22,7 @@
 	     				<group name="Redemption">
 	     					<group>
 	     						<field name="enable_email"/>
+	     						<field name="email_from"/>
 	     						<field name="pop3_download"/>
 	     						<field name="pop3_server" attrs="{'invisible':[('pop3_download','=',False)]}"/>
 	     						<field name="pop3_user" attrs="{'invisible':[('pop3_download','=',False)]}"/>
