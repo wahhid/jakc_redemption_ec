@@ -10,7 +10,7 @@ class rdm_config(osv.osv):
     def get_config(self, cr, uid, context=None):
         ids = self.search(cr, uid, [('state','=', True),], context=context)
         if ids:
-            return self.browse(cr, uid, uid, context=context)
+            return self.browse(cr, uid, ids[0], context=context)
         else:
             return None
             

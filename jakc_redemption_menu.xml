@@ -25,13 +25,15 @@
         <menuitem id="rdm_customer_zone_menu" name="Customer Zone" parent="rdm_general_customer_menu"  action="action_rdm_customer_zone" groups="base.group_rdm_manager" sequence="6"/>
         <menuitem id="rdm_customer_education_menu" name="Customer Education" parent="rdm_general_customer_menu"  action="action_rdm_customer_education" groups="base.group_rdm_manager" sequence="7"/>
         <menuitem id="rdm_customer_interest_menu" name="Customer Interest" parent="rdm_general_customer_menu"  action="action_rdm_customer_interest" groups="base.group_rdm_manager" sequence="8"/>
-        <menuitem id="rdm_customer_occupation_menu" name="Customer Occupation" parent="rdm_general_customer_menu"  action="action_rdm_customer_occupation" groups="base.group_rdm_manager" sequence="9"/>        
+        <menuitem id="rdm_customer_occupation_menu" name="Customer Occupation" parent="rdm_general_customer_menu"  action="action_rdm_customer_occupation" groups="base.group_rdm_manager" sequence="9"/>
+ 		<menuitem id="rdm_province_menu" name="Province" parent="rdm_general_customer_menu"  action="action_rdm_province" groups="base.group_rdm_manager" sequence="10"/>
+ 		<menuitem id="rdm_city_menu" name="City" parent="rdm_general_customer_menu"  action="action_rdm_city" groups="base.group_rdm_manager" sequence="11"/>                
  		<menuitem id="rdm_promo_segment_menu" name="Age Segment" parent="rdm_general_customer_menu" groups="base.group_rdm_manager" action="action_rdm_age_segment" sequence="1"/>       
         <menuitem id="rdm_tenant_type_menu" name="Category" parent="rdm_general_tenant_menu"  action="action_rdm_tenant_category" groups="base.group_rdm_manager" sequence="1"/>
         <menuitem id="rdm_tenant_grade_menu" name="Grade" parent="rdm_general_tenant_menu"  action="action_rdm_tenant_grade" groups="base.group_rdm_manager" sequence="2"/>
         <menuitem id="rdm_tenant_title_menu" name="Title" parent="rdm_general_tenant_menu"  action="action_rdm_tenant_title" groups="base.group_rdm_manager" sequence="3"/>
-        <menuitem id="rdm_bank_menu" name="Bank" parent="rdm_general_bank_menu"  action="action_rdm_bank" groups="base.group_rdm_manager" sequence="1"/>
- 		       
+        <menuitem id="rdm_bank_menu" name="Bank" parent="rdm_general_bank_menu"  action="action_rdm_bank" groups="base.group_rdm_manager" sequence="1"/> 
+ 		<menuitem id="rdm_bank_card_type_meny" name="Bank Card Type" parent="rdm_general_bank_menu"  action="action_rdm_bank_card_type" groups="base.group_rdm_manager" sequence="1"/>       
         <!-- AYC -->
         <menuitem id="rdm_card_type_menu" name="Card Type" parent="rdm_general_ayc_menu"  action="action_rdm_card_type" groups="base.group_rdm_manager" sequence="1"/>                
     </data>

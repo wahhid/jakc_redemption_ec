@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <openerp>
     <data>
+    
+        <!-- RDM/PROVINCE -->
+		
+        <record model="ir.ui.view" id="view_rdm_province_form">
+            <field name="name">rdm.province.form</field>
+            <field name="model">rdm.province</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Province" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_province_tree">
+            <field name="name">rdm.province.tree</field>
+            <field name="model">rdm.province</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Province">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/CITY -->
+		
+        <record model="ir.ui.view" id="view_rdm_city_form">
+            <field name="name">rdm.city.form</field>
+            <field name="model">rdm.city</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="City" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_city_tree">
+            <field name="name">rdm.city.tree</field>
+            <field name="model">rdm.city</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="City">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+                    
         <!-- RDM/CUSTOMER TYPE -->
 		
         <record model="ir.ui.view" id="view_rdm_customer_type_form">
@@ -380,6 +437,54 @@
             </field>
         </record>
         
+        
+        <!-- RDM/BANK CARD -->
+		
+        <record model="ir.ui.view" id="view_rdm_bank_card_form">
+            <field name="name">rdm.bank.card.form</field>
+            <field name="model">rdm.bank.card</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Bank Card" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>
+	                        <field name="card_type"/>	                                                   
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+        
+        
+        <!-- RDM/BANK CARD TYPE-->
+		
+        <record model="ir.ui.view" id="view_rdm_bank_card_type_form">
+            <field name="name">rdm.bank.card.type.form</field>
+            <field name="model">rdm.bank.card.type</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Bank Card Type" version="7.0">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_bank_card_type_tree">
+            <field name="name">rdm.bank.card.type.tree</field>
+            <field name="model">rdm.bank.card.type</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Bank Card Type">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
         <!-- RDM/TENANT TITLE -->
 		
         <record model="ir.ui.view" id="view_rdm_tenant_title_form">
@@ -397,72 +502,18 @@
             </field>
         </record>
 		
-        <record model="ir.ui.view" id="view_rdm_tenant_grade_tree">
-            <field name="name">rdm.tenant.grade.tree</field>
-            <field name="model">rdm.tenant.grade</field>			
+        <record model="ir.ui.view" id="view_rdm_tenant_title_tree">
+            <field name="name">rdm.tenant.title.tree</field>
+            <field name="model">rdm.tenant.title</field>			
             <field name="type">tree</field>						
             <field name="arch" type="xml">
-                <tree string="Tenant Grade">
+                <tree string="Tenant Title">
                     <field name="name"/>		
                 </tree>
             </field>
         </record>
 
-        <!-- RDM/PROVINCE -->
-		
-        <record model="ir.ui.view" id="view_rdm_province_form">
-            <field name="name">rdm.province.form</field>
-            <field name="model">rdm.province</field>						
-            <field name="type">form</field>						
-            <field name="arch" type="xml">
-                <form string="Province" version="7.0">
-                	<sheet>
-	                    <group>                            
-	                        <field name="name"/>                            
-	                    </group>                		                	
-                	</sheet> 
-                </form>
-            </field>
-        </record>
-		
-        <record model="ir.ui.view" id="view_rdm_province_tree">
-            <field name="name">rdm.province.tree</field>
-            <field name="model">rdm.province</field>			
-            <field name="type">tree</field>						
-            <field name="arch" type="xml">
-                <tree string="Province">
-                    <field name="name"/>		
-                </tree>
-            </field>
-        </record>
-
-        <!-- RDM/CITY -->
-		
-        <record model="ir.ui.view" id="view_rdm_city_form">
-            <field name="name">rdm.city.form</field>
-            <field name="model">rdm.city</field>						
-            <field name="type">form</field>						
-            <field name="arch" type="xml">
-                <form string="City" version="7.0">
-                	<sheet>
-	                    <group>                            
-	                        <field name="name"/>                            
-	                    </group>                		                	
-                	</sheet> 
-                </form>
-            </field>
-        </record>
-		
-        <record model="ir.ui.view" id="view_rdm_tenant_grade_tree">
-            <field name="name">rdm.tenant.grade.tree</field>
-            <field name="model">rdm.tenant.grade</field>			
-            <field name="type">tree</field>						
-            <field name="arch" type="xml">
-                <tree string="Tenant Grade">
-                    <field name="name"/>		
-                </tree>
-            </field>
-        </record>
+     
         
 
 		<!-- RDM/AGE SEGMENT -->
@@ -588,6 +639,12 @@
 		<record model="ir.actions.act_window" id="action_rdm_bank">
             <field name="name">Bank</field>
             <field name="res_model">rdm.bank</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+        <!-- BANK CARD TYPE-->
+		<record model="ir.actions.act_window" id="action_rdm_bank_card_type">
+            <field name="name">Bank Card Type</field>
+            <field name="res_model">rdm.bank.card.type</field>
             <field name="view_mode">tree,form</field>
         </record>	
         <!-- TENANT TITLE -->
